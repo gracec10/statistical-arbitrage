@@ -1,1 +1,5 @@
 # statistical-arbitrage
+
+What is arbitrage?
+
+"Arbitrage is a ‘risk-free’ trading strategy that attempts to exploit inefficiencies in a market environment. One classic example of technological arbitrage is ETF arbitrage. ETFs (Exchange Traded Funds) consist of a basket of stocks that allow traders to invest in a single instrument while remaining well diversified across an entire sector. ETFs can represent sectors (XLK: Technology), bonds (HYG: High Yield Bonds), and even the major indexes (SPY: Dow Jones Industrials). ETFs are made up of a number of different equities that are bundled together to make a fund.  If a trader has the correct amount of stocks, he can actually go to the ETF manager and exchange his stocks for an ETF. Likewise, if you own an ETF, you can go to the fund manager and redeem your ETF for the underlying stocks. So if an ETF was made up of 1 GOOG, 2 AAPL, and 5 IBM, a trader could either provide all the parts to the ETF and redeem and ETF, or redeem their ETF for the equities. The arbitrage opportunity occurs when there is a price discrepancy between the price of the ETF and the price of the underlying, since these should always be equal." 
