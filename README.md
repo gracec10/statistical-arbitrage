@@ -1,5 +1,7 @@
-# statistical-arbitrage
+Arbitrage attempts to take advantage of discrepancies in the stock market.
+One common way people do this is by find stocks that seem to be "cointegrated," meaning they tend to fluctuate together with a difference under ~5%. 
+Then, when the two interrelated stocks start to diverge at some point in time, one would theoretically buy the lower one and short the higher one, because you would expect both to eventually return to the mean. So, if you bought the lower one, you would make money when it goes back up and vice versa.
 
-What is arbitrage?
+The first part of my project allows the user to enter two stocks (using codes from Quandl) and see how cointegrated they are with 1) a graphical display, and 2) a mathematical calculation. This is the index.py file.
 
-"Arbitrage is a ‘risk-free’ trading strategy that attempts to exploit inefficiencies in a market environment. One classic example of technological arbitrage is ETF arbitrage. ETFs (Exchange Traded Funds) consist of a basket of stocks that allow traders to invest in a single instrument while remaining well diversified across an entire sector. ETFs can represent sectors (XLK: Technology), bonds (HYG: High Yield Bonds), and even the major indexes (SPY: Dow Jones Industrials). ETFs are made up of a number of different equities that are bundled together to make a fund.  If a trader has the correct amount of stocks, he can actually go to the ETF manager and exchange his stocks for an ETF. Likewise, if you own an ETF, you can go to the fund manager and redeem your ETF for the underlying stocks. So if an ETF was made up of 1 GOOG, 2 AAPL, and 5 IBM, a trader could either provide all the parts to the ETF and redeem and ETF, or redeem their ETF for the equities. The arbitrage opportunity occurs when there is a price discrepancy between the price of the ETF and the price of the underlying, since these should always be equal." 
+The second part would be to automatically go through and find cointegrated stocks as well as statistical arbitrage situations in those stocks. It is not yet working, but it is the index2.py file.
