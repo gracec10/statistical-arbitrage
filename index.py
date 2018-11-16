@@ -15,43 +15,57 @@ from statsmodels.tsa.stattools import adfuller
 start='2016-01-01'
 end='2018-01-01'
 
-jpm = quandl.get("EOD/JPM", start_date=start, end_date=end)
-gs = quandl.get("EOD/GS", start_date=start, end_date=end)
+def begin():
+  one_input = input('Enter Quandl code of the first stock: ')
+  two_input = input('Enter Quandl code of the second stock: ')
 
-plt.figure(figsize=(10,8))
+  one = quandl.get(one_input, start_date=start, end_date=end)
+  two = quandl.get(two_input, start_date=start, end_date=end)
 
-plt.plot(jpm["Close"], label="JP Morgan")
+  plt.figure(figsize=(10,8))
 
-plt.plot(gs["Close"], label="Goldman Sachs")
+  plt.plot(one["Close"], label='First Stock')
 
-plt.title("JP Morgan and Goldman Sachs over 2016-2018")
+  plt.plot(two["Close"], label='Second Stock')
 
-plt.legend(loc=0)
-plt.show()
+  plt.title("Both stocks over 2016-2018")
 
-newDF = pd.DataFrame()
+  plt.legend(loc=0)
+  plt.show()
 
-newDF['JPM'] = jpm['Close']
-newDF['GS'] = gs['Close']
+  newDF = pd.DataFrame()
 
-newDF.head()
+  newDF['one'] = one['Close']
+  newDF['two'] = two['Close']
 
-sns.heatmap(newDF.corr())
+  newDF.head()
 
-plt.figure(figsize=(15,10))
-sns.jointplot(newDF['JPM'],newDF['GS'])
-plt.legend(loc=0)
-# plt.show()
+  sns.heatmap(newDF.corr())
 
-newDF['Spread'] = newDF['JPM']-newDF['GS']
+  # plt.figure(figsize=(15,10))
+  # sns.jointplot(newDF['one'],newDF['two'])
+  # plt.legend(loc=0)
+  # # plt.show()
 
-adf = adfuller(newDF['Spread'])
+  newDF['Spread'] = newDF['one']-newDF['two']
 
-if adf[0] < adf[4]['1%']:
-  print('Spread is cointegrated at 1 percent significance level')
-elif adf[0] < adf[4]['5%']:
-  print('Spread is cointegrated at 5 percent significance level')
-elif adf[0] < adf[4]['10%']:
-  print('Spread is cointegrated at 10 percent significance level')
-else:
-  print('Spread is not cointegrated')
+  adf = adfuller(newDF['Spread'])
+
+  if adf[0] < adf[4]['1%']:
+    print('Spread is cointegrated at 1 percent significance level')
+  elif adf[0] < adf[4]['5%']:
+    print('Spread is cointegrated at 5 percent significance level')
+  elif adf[0] < adf[4]['10%']:
+    print('Spread is cointegrated at 10 percent significance level')
+  else:
+    print('Spread is not cointegrated')
+    
+  play_again = input("Play again? y/n: ")
+  if play_again == "y":
+    game(states)
+  else:
+    print("Thanks! Come again!")
+    
+input("Welcome! Press Enter to begin.")
+
+begin()

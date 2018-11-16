@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 numpy = "*"
 pandas = "*"
+matplotlib = "*"
 quandl = "*"
 statsmodels = "*"
-matplotlib = "*"
 seaborn = "*"
 
 [dev-packages]
